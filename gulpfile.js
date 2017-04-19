@@ -7,11 +7,18 @@ var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 var connect = require('gulp-connect');
+var autoprefixer = require('gulp-autoprefixer');
+var modernizr = require('gulp-modernizr');
+var uglify = require('gulp-uglify');
 
 gulp.task('sass', function() {
     return gulp.src('./assets/sass/**/*.sass')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write())
@@ -40,6 +47,13 @@ gulp.task('connect', function() {
         root: './_dist',
         livereload: true
     });
+});
+
+gulp.task('modernizr', function() {
+    gulp.src('./assets/js/*.js')
+        .pipe(modernizr())
+        .pipe(uglify())
+        .pipe(gulp.dest("./_dist/assets/js"))
 });
 
 //group all watch tasks in one
