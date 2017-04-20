@@ -1,4 +1,5 @@
-'use strict';
+// jshint node: true
+"use strict";
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -28,7 +29,7 @@ gulp.task('sass', function() {
 
 //look for changes in .sass files
 gulp.task('sass:watch', function() {
-    gulp.watch('./assets/sass/**/*.sass', ['sass'])
+    gulp.watch('./assets/sass/**/*.sass', ['sass']);
 });
 
 gulp.task('html', function () {
@@ -49,14 +50,18 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('modernizr', function() {
+gulp.task('js', function() {
     gulp.src('./assets/js/*.js')
-        .pipe(modernizr())
-        .pipe(uglify())
-        .pipe(gulp.dest("./_dist/assets/js"))
+        // .pipe(modernizr())
+        // .pipe(uglify())
+        .pipe(gulp.dest("./_dist/assets/js"));
+});
+
+gulp.task('js:watch', function() {
+    gulp.watch(['./assets/**/*.js'], ['js']);
 });
 
 //group all watch tasks in one
-gulp.task('watch', ['sass:watch', 'html:watch']);
+gulp.task('watch', ['sass:watch', 'html:watch', 'js:watch']);
 
-gulp.task('default', ['sass', 'connect', 'watch']);
+gulp.task('default', ['js', 'sass', 'connect', 'watch']);

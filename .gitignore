@@ -1,3 +1,5 @@
 node_modules/
 _dist/assets/css/
+_dist/assets/js/
 _dist/assets/lib/
+secrets

@@ -2,10 +2,10 @@ $(function() {
 
     //Set up instafeed
     var feed = new Instafeed({
-        accessToken: '',
+        accessToken: window.IG_TOKEN,
         target: 'instafeed',
         get: 'user',
-        userId: '',
+        userId: '577547110',
         // tagName: 'awesome',
         links: true,
         limit: 8,
