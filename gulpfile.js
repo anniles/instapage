@@ -53,7 +53,7 @@ gulp.task('connect', function() {
 gulp.task('js', function() {
     gulp.src('./assets/js/*.js')
         // .pipe(modernizr())
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest("./_dist/assets/js"));
 });
 

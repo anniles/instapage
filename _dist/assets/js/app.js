@@ -1,18 +1,1 @@
-$(function() {
-
-    //Set up instafeed
-    var feed = new Instafeed({
-        accessToken: window.IG_TOKEN,
-        target: 'instafeed',
-        get: 'user',
-        userId: '577547110',
-        // tagName: 'awesome',
-        links: true,
-        limit: 8,
-        sortBy: 'most-recent',
-        resolution: 'standard_resolution',
-        template:  '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"><div class="photo-box"><div class="image-wrap"><a href="{{link}}"><img src="{{image}}"></a><div class="likes">{{likes}} Likes</div></div><div class="description">{{caption}}<div class="date">{{model.date}}</div></div></div></div>'
-    });
-
-    feed.run();
-});
+$(function(){new Instafeed({accessToken:"",target:"instafeed",get:"user",userId:"",links:!0,limit:8,sortBy:"most-recent",resolution:"standard_resolution",template:'<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"><div class="photo-box"><div class="image-wrap"><a href="{{link}}"><img src="{{image}}"></a><div class="likes">{{likes}} Likes</div></div><div class="description">{{caption}}<div class="date">{{model.created_time}}</div></div></div></div>',filter:function(e){var t=new Date(1e3*e.created_time);m=t.getMonth(),d=t.getDate(),y=t.getFullYear();var l=new Array;l[l.length]="Jan",l[l.length]="Feb",l[l.length]="Mar",l[l.length]="Apr",l[l.length]="May",l[l.length]="Jun",l[l.length]="Jul",l[l.length]="Aug",l[l.length]="Sep",l[l.length]="Oct",l[l.length]="Nov",l[l.length]="Dec";var n=l[m]+" "+d+" "+y;return e.created_time=n,!0}}).run()});
