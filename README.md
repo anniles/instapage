@@ -3,12 +3,11 @@ A page that shows images from an instagram account.
 
 ## Install
 - `$ npm install`
-- `$ bower install`
 
 You will need an access token from instagram.
-To get an access token replace `CLIENT_ID` with your client id in the following url:  
-`https://www.instagram.com/oauth/authorize/?client_id=CLIENT_ID&redirect_uri=http://localhost:8080/oauth&response_type=token`  
-and get the access token from the response url.  
+To get an access token replace `CLIENT_ID` with your client id in the following url:
+`https://www.instagram.com/oauth/authorize/?client_id=CLIENT_ID&redirect_uri=http://localhost:8080/oauth&response_type=token`
+and get the access token from the response url.
 
 Replace the values in the following code:
 ```javascript
@@ -27,13 +26,13 @@ var feed = new Instafeed({
 });
 ```
 
-To run the application:  
+To run the application:
 ```
 $ gulp
 
 ```
-This will compile all assets, set up watchers for sass, html, js and will start a development server with live reload.  
+This will compile all assets, set up watchers for sass, html, js and will start a development server with live reload.
 
 
-### Note  
+### Note
 read the following issue: [instafeed.js/issues/345](https://github.com/stevenschobert/instafeed.js/issues/345)

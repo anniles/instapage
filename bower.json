@@ -1,16 +1,21 @@
 {
   "name": "instapage",
   "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "sofia <anniles_@hotmail.com>"
+  ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/anniles/instapage",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "_dist/assets/lib",
     "test",
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.6"
+    "instafeed.js": "^1.4.1"
   }
 }

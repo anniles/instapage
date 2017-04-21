@@ -1,4 +1,5 @@
-$(function() {
+(function() {
+    "use strict";
 
     //Set up instafeed
     var feed = new Instafeed({
@@ -17,11 +18,11 @@ $(function() {
 
             var date = new Date(image.created_time*1000);
 
-            m = date.getMonth();
-            d = date.getDate();
-            y = date.getFullYear();
+            var m = date.getMonth();
+            var d = date.getDate();
+            var y = date.getFullYear();
 
-            var month_names = new Array ( );
+            var month_names = [];
             month_names[month_names.length] = "Jan";
             month_names[month_names.length] = "Feb";
             month_names[month_names.length] = "Mar";
@@ -44,4 +45,5 @@ $(function() {
     });
 
     feed.run();
-});
+
+}());
